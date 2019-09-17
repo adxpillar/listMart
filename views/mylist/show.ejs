@@ -1,0 +1,38 @@
+<%include ../partials/header %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<div class="thumbnail">
+				<div class="caption-full">
+					<h3><%= shopperList.name %></h3>
+					<p><%=shopperList.description%></p>
+					<h4><%=shopperList.total%></h4>
+				</div>
+				
+			</div>
+			<div class="well">
+				<div class="text-right">
+					<a class="btn btn-success" href="/mylist/<%=shopperList._id%>/grocerys/new"> Add a new item to your list</a>
+				</div>
+				<hr>
+				<% shopperList.grocerys.forEach(function(grocery){ %>
+				<div class="row">
+					<div class="col-md-9">
+						<div class="thumbnail">
+							<img class="img-responsive" src="<%= grocery.image%>">
+							<p><strong> <%=grocery.item%> </strong></p>
+							<p><%= grocery.author.username%></p>
+				<%});%>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+
+
+<%include ../partials/footer %>

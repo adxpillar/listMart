@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+<div class="container">
+	<div class="jumbotron">
+		<h1 class="display-4">Welcome to ListyMart!</h1>
+		<p class="lead">Your neighbourhood market is now online.		</p>
+		<hr class="my-4">
+		<p>Start shopping for lowest prices possible.</p>
+		<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+	</div>
+
+	<div class="row text-center" style="display:flex; flex-wrap: wrap;" >
+		<% allLists.forEach(function(all){ %>
+			<div class="col-md-3 col-sm-6">
+				<div class="thumbnail">
+					<img src="<%= all.image %>">
+					<div class="caption">
+						<h3><%= all.name %></h3>
+					</div>
+					<p><%=all.description%></p>
+					<span><p><%=all.total%></p></span>
+					<a href="/mylist/<%=all._id%>" class="btn btn-primary">View your items</a>
+				</div>
+			</div>
+		<% }); %>
+	</div>
+</div>
+
+<% include ../partials/footer %>

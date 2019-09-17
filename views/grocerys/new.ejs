@@ -1,0 +1,28 @@
+<% include ../partials/header%>
+<div class="container">
+	<div class="row">
+		<h1 style="text-center">Add new items to your <%= pickedList.name%> list</h1>
+		<div style="width: 30%; margin: 25px auto;">
+			<form action="/mylist/<%=pickedList._id%>/grocerys" method="POST">
+				<div class="form-group">
+					<label for="Item">Item</label>
+					<input class="form-control" type="text" name="grocery[item]" placeholder="item name">
+				</div>
+				<div class="form-group">
+					<label for="Image URL">Image URL</label>
+					<input class="form-control" type="text" name="grocery[image]" placeholder="image url">
+				</div>
+				<div class="form-group">
+					<label for="Author">Author</label>
+					<input class="form-control" type="text" name="grocery[author]" placeholder="your name">
+				</div>
+				<div class="form-group">
+					<button type="button" class="btn btn-primary">Submit</button>
+				</div>
+			</form>
+			<a href="/mylist">Go Back</a>
+		</div>
+	</div>
+</div>
+
+<% include ../partials/footer%>
